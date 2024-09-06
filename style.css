@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --bg-image: url("source/banner.jpg");
+    color: white;
+}
+
+body {
+    width: 100vw;
+    background-color: black;
+}
+
+* {
+
+    padding: 0;
+    margin: 0;
+    font-family: "Noto sans";
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.main {
+    height: 100vh;
+    width: inherit;
+    background-image: var(--bg-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left center;
+}
+
+.layer {
+    z-index: 1;
+    height: inherit;
+    width: inherit;
+    background: linear-gradient(to top, rgb(0, 0, 0, 0.7) 0, rgb(0, 0, 0, 0.75) 60%, rgb(0, 0, 0, 0.7) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 1;
+    gap: 30%;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: max(380px, 75%);
+    flex-shrink: 1;
+    max-width: max(75%, 380px);
+    margin-top: 20px;
+
+    img {
+        height: 40px;
+    }
+
+    .signin {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+        .lang {
+            border: 1px solid rgba(255, 255, 255, 0.685);
+            padding: 8px 12px;
+            border-radius: 3px;
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            overflow: hidden;
+
+            img {
+                filter: invert(1);
+                height: 15px;
+
+            }
+
+            select {
+                background-color: inherit;
+                border: none;
+                color: white;
+                font-weight: bold;
+            }
+        }
+
+        a {
+            padding: 8px 14px;
+            background-color: rgba(222, 7, 7, 0.888);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+    }
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    span {
+        font-size: 1.4rem;
+    }
+
+    .login {
+        display: flex;
+        flex-shrink: 1;
+        min-width: 400px;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        input {
+            width: 370px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.603);
+            border-radius: 5px;
+            color: white;
+        }
+
+        ::-webkit-input-placeholder {
+            padding: 15px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.679);
+        }
+
+        input:focus::-webkit-input-placeholder {
+            position: relative;
+            top: -10px;
+            font-size: 0.7rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.4rem;
+            background-color: red;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: nowrap;
+            text-wrap: nowrap;
+        }
+    }
+
+}
+
+.container span:first-child {
+    font-size: 2.9rem;
+    font-weight: 900;
+}
+
+hr {
+    height: 10px;
+    background-color: rgba(46, 46, 46, 0.701);
+    border-radius: 5px;
+    border: none;
+    z-index: 1;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    height: max-content;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        width: max(35%, 600px);
+        text-wrap: wrap;
+        gap: 20px;
+
+        :first-child {
+            font-size: min(3rem, 500px);
+            font-weight: 900;
+            color: white;
+        }
+
+        :not(:first-child) {
+            font-size: min(1.4rem, 23px);
+            text-wrap: wrap;
+        }
+    }
+}
+
+.elements {
+    width: 500px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 1;
+    min-height: 300px;
+    min-width: 400px;
+}
+
+#card1>.elements {
+    img {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        z-index: 1;
+    }
+
+    video {
+        position: absolute;
+        top: 82px;
+        left: 54px;
+        height: 218px;
+    }
+}
+
+#card2 .elements {
+    .down {
+        position: absolute;
+        border: 2px solid rgba(255, 255, 255, 0.575);
+        z-index: 1;
+        width: 300px;
+        padding: 10px 15px;
+        background-color: rgba(0, 0, 0, 0.834);
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 5px;
+        top: 70%;
+    }
+
+    img {
+        justify-self: center;
+        align-self: center;
+    }
+}
+
+#card3 .elements {
+    img {
+        z-index: 1;
+        height: inherit;
+    }
+
+    video {
+        position: absolute;
+        top: 44px;
+        height: 186px;
+    }
+}
+
+#card4 .elements {
+    img {
+        height: 460px;
+    }
+}
+
+@media screen and (min-width : 700px) and (max-width : 1140px) {
+    body {
+        text-align: center;
+    }
+
+    .container {
+        padding: 30px;
+        align-self: center;
+
+    }
+
+    .layer {
+        gap: 20%;
+    }
+
+    .card {
+        padding: 30px;
+        gap: 25px;
+    }
+
+}
+
+@media screen and (max-width : 700px) {
+    body {
+        width: 100vw;
+    }
+
+    .main,
+    .layer {
+        height: 65vh;
+        width: 100%;
+    }
+
+    .layer {
+        gap: 10%;
+    }
+
+    .container {
+        padding: 15px;
+        text-align: center;
+        text-wrap: wrap;
+
+        span {
+            font-size: 1.3rem;
+        }
+
+        span:first-child {
+            font-size: 1.8rem;
+        }
+    }
+
+    .login {
+        input[type='email'] {
+            width: max(300px, 70%);
+        }
+    }
+
+    .card {
+        all: unset;
+        height: max-content;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0px;
+
+        .text {
+            width: 80%;
+            text-align: center;
+            gap: 10px;
+
+            span:first-child {
+                font-size: 1.4rem;
+            }
+            :not(:first-child){
+                font-size: 1rem;
+                color: rgba(255, 255, 255, 0.651);
+            }
+        }
+
+        .elements {
+            width: 85%;
+            height: 300px;
+            position: relative;
+            object-fit: contain;
+            display: flex;
+            flex-direction: row;
+            flex-shrink: 1;
+            max-width: 300px;
+
+            img {
+                height: 100%;
+            }
+
+            video {
+                height: 100%;
+            }
+        }
+
+    }
+
+    #card4 {
+        .elements {
+            object-fit: contain;
+
+            img {
+                all: unset;
+                width: 100%;
+            }
+        }
+    }
+
+    #card1{
+        .elements{
+            video{
+                position: absolute;
+                top: 62px;
+                left: 54px;
+                height: 164px;
+            }
+        }
+    }
+
+    #card3{
+        .elements{
+            video{
+                position: absolute;
+                top: 37px;
+                left: 72px;
+                height: 143px;
+
+            } 
+        }
+    }
+
+}
